@@ -14,8 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
+    - name: Requirements file
       # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      run: |
-        pip install -r requirements.txt
-        python app.py
+      run: pip install -r requirements.txt
+        
