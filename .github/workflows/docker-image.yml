@@ -1,23 +1,18 @@
-name: Docker Image CI
+name: deploy
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branch:
+      - master
 
 jobs:
-
   build:
-
-    runs-on: ubuntu-latest
-
+    runs-on: self-hosted
     steps:
-    - uses: actions/checkout@v3
-    - name: Requirements file
-      # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-      run: pip install -r requirements.txt
-    - name: Run the app
-      run: python app.py
+    - uses: actions/checkout@v2
+    - name: Build and Run Docker
+      run: docker build -t a . && docker run -dp 5000:5000 a
+
+      
     
         
