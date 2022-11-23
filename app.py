@@ -5,9 +5,9 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World!!!! this is souvik'
 
-@app.route('/about')
-def hello_world():
-    return 'this is about page'
+# @app.route('/about')
+# def hello_world():
+#     return 'this is about pag'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=5000)
