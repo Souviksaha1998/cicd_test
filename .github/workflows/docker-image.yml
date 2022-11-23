@@ -10,7 +10,7 @@ jobs:
     name: Building on ubuntu image
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@master
     - name: Installing requirements file
       run: |
           pip install -r requirements.txt
