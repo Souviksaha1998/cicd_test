@@ -1,4 +1,4 @@
-name: deploy
+name: Build testing
 
 on:
   push:
@@ -7,11 +7,13 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    name: Building on ubuntu image
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Build and Run Docker
-      run: docker build -t a . && docker run -dp 5000:5000 a
+    - name: Installing requirements file
+      run: |
+          pip install -r requirements.txt
 
       
     
