@@ -3,17 +3,18 @@ name: Build testing
 on:
   push:
     branch:
-      - souvik
+      - master
 
 jobs:
   build:
-    name: Building on ubuntu image
+    name: Using ubuntu latest
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Installing requirements file
+    - uses: actions/checkout@v2
+    - name: Installing dockerfile file
       run: |
-          pip install -r requirements.txt
+          docker build -t test:1 .
+          echo "hello world"
 
       
     
