@@ -7,7 +7,7 @@ def hello_world():
 
 @app.route('/about')
 def hello():
-    return 'this is about page'
+    return '<h1>this is about page<h1>'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=5000)
