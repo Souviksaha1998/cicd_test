@@ -16,7 +16,7 @@ jobs:
           docker build -t ssouvik191/test:2 .
     - name: Running docker image
       run: |
-          docker run -it ssouvik191/test:2
+          docker run -d ssouvik191/test:2
 
 
 
