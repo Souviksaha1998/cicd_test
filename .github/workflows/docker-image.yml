@@ -19,7 +19,7 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
         DOKCER_PASSWORD: ${{secrets.DOKCER_PASSWORD}}
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        docker login -u $DOCKER_USER --password-stdin $DOCKER_PASSWORD
     - name: Docker push
       run: docker push ${{secrets.DOCKER_USERNAME}}/test_for_cicd
           
