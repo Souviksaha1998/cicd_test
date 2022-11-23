@@ -14,7 +14,15 @@ jobs:
     - name: Installing dockerfile file
       run: |
           docker build -t test:1 .
-          echo "hello world"
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
+        DOKCER_PASSWORD: ${{secrets.DOKCER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: Docker push
+      run: docker push ${{secrets.DOCKER_USERNAME}}/test_for_cicd
+          
 
       
     
